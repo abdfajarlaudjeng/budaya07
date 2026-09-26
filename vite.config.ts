@@ -97,3 +97,8 @@ export default defineConfig(() => {
     },
   };
 });
+// vite.config.ts
+export default defineConfig({
+  base: './', // Wajib agar path asset di GitHub Pages terbaca dengan benar
+  // ... plugins
+});
