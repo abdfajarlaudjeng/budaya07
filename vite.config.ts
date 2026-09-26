@@ -84,6 +84,7 @@ function sheetsProxyPlugin(): Plugin {
 
 export default defineConfig(() => {
   return {
+    base: './',
     plugins: [react(), tailwindcss(), sheetsProxyPlugin()],
     resolve: {
       alias: {
@@ -96,9 +97,4 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };
-});
-// vite.config.ts
-export default defineConfig({
-  base: './', // Wajib agar path asset di GitHub Pages terbaca dengan benar
-  // ... plugins
 });

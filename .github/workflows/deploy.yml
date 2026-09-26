@@ -1,8 +1,11 @@
-name: Deploy Djelajah Donggala to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['main'] # sesuaikan dengan nama branch utama Anda (main atau master)
+    branches:
+      - main
+      - master
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -14,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -29,13 +32,13 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies (npm install)
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build project (npm run build)
+      - name: Build production app
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
