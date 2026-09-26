@@ -1,0 +1,6 @@
+{
+  "name": "Djelajah Donggala",
+  "description": "Portal Cagar Budaya dan Wisata Bersejarah Kabupaten Donggala terintegrasi Google Spreadsheet dan siap deploy Vercel.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
